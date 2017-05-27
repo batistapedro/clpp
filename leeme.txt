@@ -1,0 +1,37 @@
+configuración del sistema 
+
+AUTORES DEL SISTEMA {
+				MARIELA MORA C.I : V-18014439,  
+				PEDRO BATISTA C.I: V-19871554, CorreoElectronico: batistapedro271188@gmail.com
+
+					}
+
+CONFIGURACION DE LA BASE DE DATOS:
+
+En la camperta raiz del sistema encontrara una carpeta llamada php el  cual contiene
+un archivo llamado conexion.php en dicho archivo hay que configurar las variables de 
+conexion de la base de datos dichas variebles son nombradas como :
+
+	$host, Esta varieble contiene el nombre de el servidor.
+	$user, Esta varieble contiene el nombre del usuario de administrador de la base de datos.
+	$clave, Esta variable contiene la clave de el administrador de la base de datos. 
+	$bd, Esra variable contiene el nombre de la base de datos del sistema.
+
+
+CONFIGURACIÓN DE CARPETAS DEL SISTEMA:
+El sistema tiene carpeta que dependiendo del sistema operativo hay que agregarle permisos de usuarios.
+En el caso de los Sistemas Operativo basado en GNU/LINUX hay que darle permiso de usuarios a algunas capertas del sistema ubicadas en la raiz del sistema estas carpetas son:
+	
+	administrador/respaldo_db : esta carpeta llamada "respaldo_db" se le debe de dar permisologia 777 ya que esta
+ 	carpeta guarda los respaldo de la base de datos, para luego automaticamente se descargas un archivo 
+	del respaldo al administrador del sistema.
+
+	archivosnoticias : Esta carpeta llamada "archivosnoticias" contiene todas las imagenes de las noticias
+	publicada en el sistema el cual para el sistema pueda guardar estas imagenes en  dicha
+	carpeta se le debe dar permisologia de usurio de tipo 777 para poder mostrar y guardar las imagenes.
+
+ 
+
+ 
+
+
