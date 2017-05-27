@@ -1,0 +1,119 @@
+$(document).ready(function(){
+$("#borrar").on({"click" : function(){
+$("#noticia, #titulo, #imagenes").val("");
+}, "mouseover" : function(){$("#borrar").attr("title","Limpiar");}
+});
+$("#bpublicar").on({"click" : function(){
+ titulo= $("#titulo").val();
+ imagenes= document.querySelector("#imagenes");
+ imagen=imagenes.files[0];
+ datos = $("#noticia").val();
+ dato = new FormData();
+ dato.append('titulo',titulo);
+ dato.append('imagen',imagen);
+ dato.append('datos',datos);
+$.ajax({
+type : "POST",
+contentType:false,
+url : "enviarnoticias.php",
+data : dato,
+processData:false,
+cache:false,
+
+beforeSend : function(){
+$(".mensaje").css("display","block").html("<img src=../imagenes/loading.gif>");
+},
+success : function(respuesta){
+if(respuesta=="<h3>datos agregados con exito</h3>"){
+$(".mensaje").css("background-color","green").html(respuesta).fadeOut(6000);
+$("#noticia, #titulo, #imagenes").val("");
+setInterval(function(){
+window.location.reload();
+},1000);
+}else{
+$(".mensaje").css("background-color", "red").html(respuesta).fadeOut(6000);
+}
+
+}
+});
+$(".mensaje").fadeOut(4000);
+}, "mouseover" : function(){$("#bpublicar").attr("title","Publicar");}
+});
+//comienzo del menu de navegacion
+
+$("#inicio").click(function(){
+window.location.reload();
+});
+
+
+$("#salir").click(function(){
+window.location="cerrraseccion.php";
+});
+
+setInterval(function(){
+
+$("#datosmovimientos").load("obtener5ultimosmovimientos.php");
+$("#datoscomunas").load("obtener5ultimascomunas.php");
+$("#datosconsejos").load("obtener5ultimosconsejos.php");
+},1000);
+
+//$("#noticias").load("obtenernoticiasdentro.php");
+$("#buscar").click(function(){
+$.ajax({
+type:"get",
+url:"buscar.php",
+beforeSend: function(){
+$("#contenido").html("<img src='../imagenes/loading.gif'>");
+},
+success:function(respuesta){
+$("#contenido").html(respuesta);
+}
+});
+});
+$("#datoss").click(function(){
+ tipo = $("#gestionsocialtipo").val();
+ id = $("#gestionsocialid").val();
+$.ajax({
+type:"post",
+url:"gestionsocialdatos.php",
+data:{tipo:tipo,id:id},
+beforeSend: function(){
+$("#contenido").html("<img src='../imagenes/loading.gif'>");
+},
+success:function(respuesta){
+$("#contenido").html(respuesta);
+}
+});
+
+});
+$("#registrar").click(function(){
+$.ajax({
+type:"get",
+url:"registrar.php",
+beforeSend:function(){
+$("#contenido").html("<img src='../imagenes/loading.gif'>");
+},
+success:function(respuesta){
+$("#contenido").html(respuesta)
+}
+});
+});
+
+$("#configurar").click(function(){
+$.ajax({
+type:"get",
+url:"configurar.php",
+beforeSend:function(){
+$("#contenido").html("<img src='../imagenes/loading.gif'>");
+},
+success: function(respuesta){
+$("#contenido").html(respuesta);
+}
+});
+});
+//fin del menu de navegacion
+
+$("#respaldarbase").click(function(){
+window.location="respaldodebase.php";
+});
+});

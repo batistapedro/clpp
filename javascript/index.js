@@ -1,0 +1,60 @@
+$(document).ready(function(){
+
+$("#section").fadeOut(0).fadeIn(1000);
+
+$("#logi").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("administrador/login.php");
+});
+
+$("#inicioindex").click(function(e){
+	e.preventDefault();
+window.location.reload();
+});
+$("#mision").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/mision.php");
+});
+$("#vision").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/vision.php");
+});
+$("#definicion").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/definicion.php");
+});
+$("#objetivo").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/objetivo.php");
+});
+$("#funcion").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/funcion.php");
+});
+$("#relaciones").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/relacionesconotrainstancia.php");
+});
+$("#organizacion").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/organizacion.php");
+});
+$("#derechos").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/derechoyatribuciones.php");
+});
+$("#integrantes").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/integrantes.php");
+});
+$("#institucionalizacion").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("documentos/institucionalizacion.php");
+});
+
+$("#descargas").click(function(e){
+	e.preventDefault();
+$("#section").fadeOut(0).fadeIn(1000).load("descargas/descargas.php");
+});
+});
+
